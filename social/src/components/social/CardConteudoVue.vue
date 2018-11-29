@@ -5,25 +5,18 @@
       <div class="row valign-wrapper">
 
         <grid-vue tamanho="1">
-          <img src="http://materializecss.com/images/yuna.jpg" alt="" class="circle responsive-img">
+          <img :src="perfil" :alt="nome" class="circle responsive-img">
         </grid-vue>
         <grid-vue tamanho="11">
           <span class="black-text">
-            <strong>Maria Silva</strong> - <small>12/01/18 12:30</small>
+            <strong>{{nome}}</strong> - <small>{{data}}</small>
 
           </span>
         </grid-vue>
 
       </div>
 
-      <div class="card-image">
-        <img src="http://materializecss.com/images/sample-1.jpg">
-        <span class="card-title">Card Title</span>
-      </div>
-
-      <div class="card-content">
-        <p>Teste de texto.</p>
-      </div>
+      <slot />
 
     </div>
     <div class="card-action">
@@ -41,7 +34,7 @@ import GridVue from '@/components/layouts/GridVue'
 
 export default {
   name: 'CardConteudoVue',
-  props:[],
+  props:['perfil','nome','data'],
 
   data () {
     return {
