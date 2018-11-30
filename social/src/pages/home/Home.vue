@@ -1,15 +1,7 @@
 <template>
 
   <span>
-    <div class="row">
-      <div class="input-field col s12">
-        <textarea id="textarea1" class="materialize-textarea"></textarea>
-        <label for="textarea1">O que está acontecendo?</label>
-      </div>
-      <p>
-        <button class="btn col s2 offset-s10">Publicar</button>
-      </p>
-    </div>
+    <publicar-conteudo-vue />
 
     <card-conteudo-vue
       perfil="http://materializecss.com/images/yuna.jpg"
@@ -29,6 +21,7 @@
 <script>
 import CardConteudoVue from '@/components/social/CardConteudoVue'
 import CardDetalheVue from '@/components/social/CardDetalheVue'
+import PublicarConteudoVue from '@/components/social/PublicarConteudoVue'
 
 export default {
   name: 'Home',
@@ -39,7 +32,8 @@ export default {
   },
   components:{
     CardConteudoVue,
-    CardDetalheVue
+    CardDetalheVue,
+    PublicarConteudoVue
   }
 }
 </script>
