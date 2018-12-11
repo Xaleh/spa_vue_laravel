@@ -1,5 +1,5 @@
 <template>
-  <spam>
+  <span>
 
     <header>
       <nav-bar logo="Social" url="/" cor="green darken-1">
@@ -34,7 +34,7 @@
 
     </footer-vue>
 
-  </spam>
+  </span>
 </template>
 
 <script>
