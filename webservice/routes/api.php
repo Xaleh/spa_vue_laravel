@@ -44,7 +44,7 @@ Route::post('/login', function (Request $request) {
     $validacao = Validator::make($data, [
 
         'email' => 'required|string|email|max:255',
-        'password' => 'required|string|min:6',
+        'password' => 'required|string',
     ]);
 
     if($validacao->fails()){
@@ -64,4 +64,10 @@ Route::post('/login', function (Request $request) {
 
 Route::middleware('auth:api')->get('/usuario', function (Request $request) {
     return $request->user();
+});
+
+Route::middleware('auth:api')->put('/perfil', function (Request $request) {
+    $user = $request->user();
+    $data = $request->all();
+    return $data;
 });
