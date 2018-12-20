@@ -71,10 +71,21 @@ export default {
       password_confirmation: this.password_confirmation
     },{"headers":{"authorization":"Bearer "+this.usuario.token}})
       .then(response => {
+        // console.log(response)
+        if(response.data.token){
+          //login com sucesso
+          sessionStorage.setItem('usuario', JSON.stringify(response.data));
+          alert('Perfil atualizado!');
 
-        console.log(response.data);
-
-
+        }else{
+          //erros de validação
+          console.log("erros de validação");
+          let erros = '';
+          for(let erro of Object.values(response.data)){
+            erros += erro + " ";
+          }
+          alert(erros);
+        }
       })
       .catch(e => {
       console.log(e)
